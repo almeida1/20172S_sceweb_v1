@@ -1,4 +1,4 @@
-package br.sceweb.testeGUI;
+package br.sceweb.teste_unitario;
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
