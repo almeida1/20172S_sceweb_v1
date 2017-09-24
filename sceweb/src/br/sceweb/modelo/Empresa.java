@@ -25,13 +25,14 @@ public class Empresa implements Serializable {
 	/*
 	 * atribui o cnpj vefica se o cnpj é valido
 	 */
-	public void setCnpj(String cnpj)  {
+	public String setCnpj(String cnpj)  {
+		String msg="";
 		if (isValido(cnpj)){
 			this.cnpj = cnpj;
 		}
 		else
-			throw new IllegalArgumentException("CNPJ inválido!");
-	
+			msg="CNPJ inválido!";
+		return msg;
 	}
 	/*
 	 * valida o cnpj
