@@ -38,8 +38,8 @@ public class UC01CadastrarEmpresa_v2 {
 		
 	}
 
-	@After
-	public void tearDownAfter() throws Exception {
+	@AfterClass
+	public static void tearDownAfter() throws Exception {
 		empresaDAO.exclui("50658639000137");
 		empresaDAO.exclui("56241412000178");
 		empresaDAO.exclui("");
@@ -62,10 +62,13 @@ public class UC01CadastrarEmpresa_v2 {
 	        return Arrays.asList(new Object[][] { 
 	        	{"Open Informatica Ltda","50658639000137","Open Informatica","Rua Aguia de Haia, 2432","121212","jose carlos","111221","contabilidade","jose@gmail.com",1},
 	        	{"Nova Empresa Ltda","56241412000178","Nova Empresa","Rua Taquari, 2222","121212","maira silva","111221","faturamento","jose@gmail.com",1},
+	        	{"Nova Empresa Ltda","56241412000178","Nova Empresa","Rua Taquari, 2222","121212","maira silva","111221","faturamento","jose@gmail.com",0},
 	        	{"Nova Empresa Ltda","","Nova Empresa","Rua Taquari, 2222","121212","maira silva","111221","faturamento","jose@gmail.com", 0},
 	        	
 	        });
 	    }
+	  
+	//http://www.devthoughts.pl/2014/07/21/parameterized-tests-with-exception/
 	@Test
 	public void test() {
 		empresa.setNomeDaEmpresa(nomeDaEmpresa);

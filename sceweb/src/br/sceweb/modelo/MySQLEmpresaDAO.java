@@ -33,7 +33,9 @@ public class MySQLEmpresaDAO implements IEmpresaDAO{
 			ps.close();
 			
 		} catch (SQLException e){
-				throw new RuntimeException(e);
+			logger.info("erro na funcao adiciona mysqlempresadao = " + e.getMessage());
+				//throw new RuntimeException(e);
+				
 			}
 		return codigoRetorno;
 	}
