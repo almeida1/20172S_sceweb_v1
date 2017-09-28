@@ -68,7 +68,7 @@ public class UC01CadastrarEmpresa_v2 {
 	        });
 	    }
 	  
-	//http://www.devthoughts.pl/2014/07/21/parameterized-tests-with-exception/
+	
 	@Test
 	public void test() {
 		empresa.setNomeDaEmpresa(nomeDaEmpresa);
