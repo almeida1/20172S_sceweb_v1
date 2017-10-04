@@ -33,7 +33,7 @@ public class MySQLEmpresaDAO implements IEmpresaDAO{
 			ps.close();
 			
 		} catch (SQLException e){
-			logger.info("erro na funcao adiciona mysqlempresadao = " + e.getMessage());
+			logger.info("SQLException metodo adiciona = " + e.getMessage());
 				//throw new RuntimeException(e);
 				
 			}
@@ -47,10 +47,11 @@ public class MySQLEmpresaDAO implements IEmpresaDAO{
 			ps= conn.prepareStatement ("delete from empresa where cnpj = ?");
 			ps.setString(1, cnpj);
 			codigoretorno = ps.executeUpdate();
-			logger.info("codigo de retorno do metodo exclui empresa = " + codigoretorno);
+			logger.info("codigo de retorno do metodo exclui empresa CNPJ = " + cnpj + " - cr = " + codigoretorno);
 			ps.close();
 			}
 		catch (SQLException e){
+			logger.info("SQLException metodo exclui empresa = " + codigoretorno);
 			throw new RuntimeException(e);
 		}
 	return codigoretorno;

@@ -60,9 +60,13 @@ public class UC01CadastrarEmpresa {
 	  @Parameters
 	    public static Collection data() {
 	        return Arrays.asList(new Object[][] { 
+	        	//CT01 - verifica o comportamento do sistema na inclusao com sucesso
 	        	{"Open Informatica Ltda","50658639000137","Open Informatica","Rua Aguia de Haia, 2432","121212","jose carlos","111221","contabilidade","jose@gmail.com",1},
-	        	{"Nova Empresa Ltda","56241412000178","Nova Empresa","Rua Taquari, 2222","121212","maira silva","111221","faturamento","jose@gmail.com",1},
-	        	{"Nova Empresa Ltda","56241412000178","Nova Empresa","Rua Taquari, 2222","121212","maira silva","111221","faturamento","jose@gmail.com",0},
+	        	//CT02 - verifica o comportamento do sistema na inclusao com sucesso
+	        	{"Nova Empresa Ltda"    ,"56241412000178","Nova Empresa","Rua Taquari, 2222","121212","maira silva","111221","faturamento","jose@gmail.com",1},
+	        	//CT03 - verifica o comportamento do sistema na inclusao de CNPJ já cadastrado
+	        	{"Nova Empresa Ltda"    ,"56241412000178","Nova Empresa","Rua Taquari, 2222","121212","maira silva","111221","faturamento","jose@gmail.com",0},
+	        	//CT04 - verifica o comportamento do sistema na inclusao de empresa cnpj branco
 	        	{"Nova Empresa Ltda","","Nova Empresa","Rua Taquari, 2222","121212","maira silva","111221","faturamento","jose@gmail.com", 0},
 	        	
 	        });
@@ -71,6 +75,7 @@ public class UC01CadastrarEmpresa {
 	
 	@Test
 	public void test() {
+		System.out.println ("executando cnpj = " + cnpj);
 		empresa.setNomeDaEmpresa(nomeDaEmpresa);
 		empresa.setCnpj(cnpj);
 		empresa.setNomeFantasia(nomeFantasia);
